@@ -20,7 +20,9 @@ async function Content({ params }: PageProps) {
   return (
     <div className="result-grid">
       <ProductDetails id={id} />
-      <Suspense fallback={<div className="result-card">Loading live stock…</div>}>
+      <Suspense
+        fallback={<div className="result-card">Loading live stock…</div>}
+      >
         <LiveStock id={id} />
       </Suspense>
     </div>
@@ -34,17 +36,17 @@ export default function DynamicSegmentPage({ params }: PageProps) {
       summary={
         <>
           <p>
-            This is a dynamic route, <code>/examples/dynamic-segment/[id]</code>.
-            Try changing the id in the URL — <code>ProductDetails</code> caches
-            its output per <code>id</code> for <code>hours</code>, while{" "}
+            This is a dynamic route, <code>/examples/dynamic-segment/[id]</code>
+            . Try changing the id in the URL — <code>ProductDetails</code>{" "}
+            caches its output per <code>id</code> for <code>hours</code>, while{" "}
             <code>LiveStock</code> right next to it is deliberately left
             uncached, so it recomputes on every request.
           </p>
           <p className="demo-note">
-            <code>generateStaticParams</code> prerenders ids{" "}
-            <code>1</code>, <code>2</code>, and <code>3</code> at build time.
-            Other ids (try <code>/examples/dynamic-segment/42</code>) are
-            still supported — they render and cache on first request.
+            <code>generateStaticParams</code> prerenders ids <code>1</code>,{" "}
+            <code>2</code>, and <code>3</code> at build time. Other ids (try{" "}
+            <code>/examples/dynamic-segment/42</code>) are still supported —
+            they render and cache on first request.
           </p>
         </>
       }

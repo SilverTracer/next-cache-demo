@@ -5,5 +5,7 @@ import { simulateWork } from "@/lib/simulate";
 // contrasted with the cached <ProductDetails> next to it.
 export async function LiveStock({ id }: Readonly<{ id: string }>) {
   const data = await simulateWork(`live-stock:${id}`, 200);
-  return <ResultCard result={data} note="Uncached - recomputed on every request." />;
+  return (
+    <ResultCard result={data} note="Uncached - recomputed on every request." />
+  );
 }

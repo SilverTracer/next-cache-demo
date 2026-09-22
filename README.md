@@ -40,6 +40,7 @@ requiring you to wait minutes/hours.
 7. **cache-tag** — tagging a cache entry and purging it on demand from a Server Action (`updateTag`).
 8. **nested-caching** — how an explicit outer `cacheLife` overrides an inner one.
 9. **conditional-lifetime** — picking a different `cacheLife` profile per branch, and the pattern for passing request-time values (like `searchParams`) into a cached function.
+10. **dynamic-segment/[id]** — a dynamic route segment (`/examples/dynamic-segment/1`) that mixes a per-id cached component (`ProductDetails`, cached for `hours` via `generateStaticParams`) with an uncached one (`LiveStock`) rendered right next to it.
 
 Each page shows the relevant code snippet next to a live result with a
 generated timestamp/id, so reloading makes it obvious whether the value came
