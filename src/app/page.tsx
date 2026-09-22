@@ -1,69 +1,77 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Link from "next/link";
+
+const examples = [
+  {
+    href: "/examples/function-level",
+    title: "1. Function-level `use cache`",
+    description: "Cache the return value of a plain async function.",
+  },
+  {
+    href: "/examples/component-level",
+    title: "2. Component-level `use cache`",
+    description: "Cache a component's rendered output, keyed by its props.",
+  },
+  {
+    href: "/examples/file-level",
+    title: "3. File-level `use cache`",
+    description: "Put the directive at the top of a file to cache every export.",
+  },
+  {
+    href: "/examples/cache-life-presets",
+    title: "4. `cacheLife` presets",
+    description: "Compare the built-in seconds/minutes/hours/days/weeks/max profiles.",
+  },
+  {
+    href: "/examples/custom-profile",
+    title: "5. Custom `cacheLife` profile",
+    description: "Define a reusable profile in next.config.ts and reference it by name.",
+  },
+  {
+    href: "/examples/inline-profile",
+    title: "6. Inline `cacheLife` profile",
+    description: "Pass a one-off { stale, revalidate, expire } object directly.",
+  },
+  {
+    href: "/examples/cache-tag",
+    title: "7. `cacheTag` + on-demand invalidation",
+    description: "Tag a cache entry and purge it on demand with revalidateTag.",
+  },
+  {
+    href: "/examples/nested-caching",
+    title: "8. Nested `use cache` scopes",
+    description: "See how an explicit outer cacheLife overrides inner lifetimes.",
+  },
+  {
+    href: "/examples/conditional-lifetime",
+    title: "9. Conditional cache lifetime",
+    description: "Call cacheLife with a different profile depending on the data.",
+  },
+];
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>
-            To get started, edit the{" "}
-            <code className={styles.code}>page.tsx</code> file.
-          </h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+    <div className="home-page">
+      <header className="home-header">
+        <h1>
+          <code>use cache</code> directive — live demo
+        </h1>
+        <p>
+          A tour of the Next.js <code>&quot;use cache&quot;</code> directive, the{" "}
+          <code>cacheLife</code> and <code>cacheTag</code> APIs, and on-demand
+          revalidation. Enabled via <code>cacheComponents: true</code> in{" "}
+          <code>next.config.ts</code>.
+        </p>
+      </header>
+      <ul className="example-list">
+        {examples.map((example) => (
+          <li key={example.href}>
+            <Link href={example.href} className="example-card">
+              <span className="example-card-title">{example.title}</span>
+              <span className="example-card-description">{example.description}</span>
+            </Link>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
