@@ -51,4 +51,3 @@ from cache (unchanged) or was recomputed (changed).
 - [`cacheLife`](https://nextjs.org/docs/app/api-reference/functions/cacheLife)
 - [`cacheTag`](https://nextjs.org/docs/app/api-reference/functions/cacheTag)
 - [`cacheComponents`](https://nextjs.org/docs/app/api-reference/config/next-config-js/cacheComponents)
-

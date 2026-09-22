@@ -16,11 +16,11 @@ export default async function FileLevelPage() {
       title="File-level `use cache`"
       summary={
         <p>
-          Placing <code>&quot;use cache&quot;</code> at the very top of a
-          file — before any imports — caches every exported function in that
-          module, instead of repeating the directive on each one. Every
-          export in a directive-covered file must be <code>async</code>,
-          including this page&apos;s default export.
+          Placing <code>&quot;use cache&quot;</code> at the very top of a file —
+          before any imports — caches every exported function in that module,
+          instead of repeating the directive on each one. Every export in a
+          directive-covered file must be <code>async</code>, including this
+          page&apos;s default export.
         </p>
       }
       code={`'use cache'

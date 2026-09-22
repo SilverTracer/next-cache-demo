@@ -60,4 +60,3 @@ async function getData() {
     </DemoLayout>
   );
 }
-

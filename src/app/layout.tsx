@@ -14,7 +14,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "use cache demo",
-  description: "A tour of the Next.js `use cache` directive, cacheLife, and cacheTag.",
+  description:
+    "A tour of the Next.js `use cache` directive, cacheLife, and cacheTag.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

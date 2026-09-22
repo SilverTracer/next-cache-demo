@@ -10,7 +10,9 @@ async function CachedCard({ type }: Readonly<{ type: string }>) {
   cacheLife("minutes");
 
   const data = await simulateWork(`component-level:${type}`);
-  return <ResultCard result={data} note={`Cache entry keyed by type="${type}".`} />;
+  return (
+    <ResultCard result={data} note={`Cache entry keyed by type="${type}".`} />
+  );
 }
 
 export default async function ComponentLevelPage() {
