@@ -32,9 +32,9 @@ export default function InlineProfilePage() {
         <p>
           For a one-off cache lifetime that doesn&apos;t need to be reused
           elsewhere, pass an object literal straight to <code>cacheLife</code>{" "}
-          instead of defining a named profile in{" "}
-          <code>next.config.ts</code>. Any property you omit falls back to
-          the <code>default</code> profile&apos;s value.
+          instead of defining a named profile in <code>next.config.ts</code>.
+          Any property you omit falls back to the <code>default</code>{" "}
+          profile&apos;s value.
         </p>
       }
       code={`async function getData() {

@@ -20,10 +20,10 @@ export default async function FunctionLevelPage() {
       title="Function-level `use cache`"
       summary={
         <p>
-          The directive goes at the top of an <code>async</code> function.
-          Every call with the same arguments reuses the cached return value.
-          Click refresh a few times — the timestamp below stays frozen until
-          the <code>minutes</code> profile revalidates.
+          The directive goes at the top of an <code>async</code> function. Every
+          call with the same arguments reuses the cached return value. Click
+          refresh a few times — the timestamp below stays frozen until the{" "}
+          <code>minutes</code> profile revalidates.
         </p>
       }
       code={`async function getData() {
@@ -34,7 +34,10 @@ export default async function FunctionLevelPage() {
   return res.json()
 }`}
     >
-      <ResultCard result={data} note="Unchanged across reloads = served from cache." />
+      <ResultCard
+        result={data}
+        note="Unchanged across reloads = served from cache."
+      />
       <RefreshButton />
     </DemoLayout>
   );

@@ -37,13 +37,23 @@ async function Content({ searchParams }: ConditionalLifetimePageProps) {
     <>
       <ResultCard
         result={data}
-        note={published ? "Branch: published → cacheLife('days')" : "Branch: draft → cacheLife('minutes')"}
+        note={
+          published
+            ? "Branch: published → cacheLife('days')"
+            : "Branch: draft → cacheLife('minutes')"
+        }
       />
       <div style={{ display: "flex", gap: "0.75rem" }}>
-        <Link href="/examples/conditional-lifetime?published=true" className="button">
+        <Link
+          href="/examples/conditional-lifetime?published=true"
+          className="button"
+        >
           View as published
         </Link>
-        <Link href="/examples/conditional-lifetime?published=false" className="button">
+        <Link
+          href="/examples/conditional-lifetime?published=false"
+          className="button"
+        >
           View as draft
         </Link>
         <RefreshButton />
@@ -52,7 +62,9 @@ async function Content({ searchParams }: ConditionalLifetimePageProps) {
   );
 }
 
-export default function ConditionalLifetimePage({ searchParams }: ConditionalLifetimePageProps) {
+export default function ConditionalLifetimePage({
+  searchParams,
+}: ConditionalLifetimePageProps) {
   return (
     <DemoLayout
       title="Conditional cache lifetime"
@@ -60,9 +72,9 @@ export default function ConditionalLifetimePage({ searchParams }: ConditionalLif
         <>
           <p>
             <code>cacheLife</code> can be called conditionally — different
-            branches can pick different profiles, as long as exactly one
-            branch runs per invocation. Here, unpublished content is cached
-            for <code>minutes</code>, published content for <code>days</code>.
+            branches can pick different profiles, as long as exactly one branch
+            runs per invocation. Here, unpublished content is cached for{" "}
+            <code>minutes</code>, published content for <code>days</code>.
           </p>
           <p className="demo-note">
             Note the pattern: <code>searchParams</code> is a request-time API,
@@ -88,4 +100,3 @@ export default function ConditionalLifetimePage({ searchParams }: ConditionalLif
     </DemoLayout>
   );
 }
-

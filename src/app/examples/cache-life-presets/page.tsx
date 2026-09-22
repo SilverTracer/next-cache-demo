@@ -57,7 +57,13 @@ async function SecondsCard() {
 }
 
 async function LongLivedPresets() {
-  const results = await Promise.all([getMinutes(), getHours(), getDays(), getWeeks(), getMax()]);
+  const results = await Promise.all([
+    getMinutes(),
+    getHours(),
+    getDays(),
+    getWeeks(),
+    getMax(),
+  ]);
   return (
     <>
       {results.map((result) => (

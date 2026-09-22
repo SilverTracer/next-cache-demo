@@ -14,22 +14,26 @@ const examples = [
   {
     href: "/examples/file-level",
     title: "3. File-level `use cache`",
-    description: "Put the directive at the top of a file to cache every export.",
+    description:
+      "Put the directive at the top of a file to cache every export.",
   },
   {
     href: "/examples/cache-life-presets",
     title: "4. `cacheLife` presets",
-    description: "Compare the built-in seconds/minutes/hours/days/weeks/max profiles.",
+    description:
+      "Compare the built-in seconds/minutes/hours/days/weeks/max profiles.",
   },
   {
     href: "/examples/custom-profile",
     title: "5. Custom `cacheLife` profile",
-    description: "Define a reusable profile in next.config.ts and reference it by name.",
+    description:
+      "Define a reusable profile in next.config.ts and reference it by name.",
   },
   {
     href: "/examples/inline-profile",
     title: "6. Inline `cacheLife` profile",
-    description: "Pass a one-off { stale, revalidate, expire } object directly.",
+    description:
+      "Pass a one-off { stale, revalidate, expire } object directly.",
   },
   {
     href: "/examples/cache-tag",
@@ -39,12 +43,14 @@ const examples = [
   {
     href: "/examples/nested-caching",
     title: "8. Nested `use cache` scopes",
-    description: "See how an explicit outer cacheLife overrides inner lifetimes.",
+    description:
+      "See how an explicit outer cacheLife overrides inner lifetimes.",
   },
   {
     href: "/examples/conditional-lifetime",
     title: "9. Conditional cache lifetime",
-    description: "Call cacheLife with a different profile depending on the data.",
+    description:
+      "Call cacheLife with a different profile depending on the data.",
   },
 ];
 
@@ -56,10 +62,10 @@ export default function Home() {
           <code>use cache</code> directive — live demo
         </h1>
         <p>
-          A tour of the Next.js <code>&quot;use cache&quot;</code> directive, the{" "}
-          <code>cacheLife</code> and <code>cacheTag</code> APIs, and on-demand
-          revalidation. Enabled via <code>cacheComponents: true</code> in{" "}
-          <code>next.config.ts</code>.
+          A tour of the Next.js <code>&quot;use cache&quot;</code> directive,
+          the <code>cacheLife</code> and <code>cacheTag</code> APIs, and
+          on-demand revalidation. Enabled via <code>cacheComponents: true</code>{" "}
+          in <code>next.config.ts</code>.
         </p>
       </header>
       <ul className="example-list">
@@ -67,7 +73,9 @@ export default function Home() {
           <li key={example.href}>
             <Link href={example.href} className="example-card">
               <span className="example-card-title">{example.title}</span>
-              <span className="example-card-description">{example.description}</span>
+              <span className="example-card-description">
+                {example.description}
+              </span>
             </Link>
           </li>
         ))}

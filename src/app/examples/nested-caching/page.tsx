@@ -14,7 +14,10 @@ async function Dashboard() {
   const data = await simulateWork("nested:dashboard");
   return (
     <>
-      <ResultCard result={data} note="Outer scope: explicit cacheLife('hours')." />
+      <ResultCard
+        result={data}
+        note="Outer scope: explicit cacheLife('hours')."
+      />
       <Widget />
     </>
   );
@@ -28,18 +31,18 @@ export default async function NestedCachingPage() {
         <>
           <p>
             <code>Dashboard</code> (outer, <code>hours</code>) renders{" "}
-            <code>Widget</code> (inner, <code>minutes</code>). Because the
-            outer scope sets an <strong>explicit</strong> <code>cacheLife</code>,
-            it always wins — the dashboard&apos;s timestamp is refreshed on
-            its own <code>hours</code> schedule, regardless of the widget
-            having a shorter lifetime.
+            <code>Widget</code> (inner, <code>minutes</code>). Because the outer
+            scope sets an <strong>explicit</strong> <code>cacheLife</code>, it
+            always wins — the dashboard&apos;s timestamp is refreshed on its own{" "}
+            <code>hours</code> schedule, regardless of the widget having a
+            shorter lifetime.
           </p>
           <p className="demo-note">
-            If the outer scope omitted <code>cacheLife</code> entirely, it
-            would fall back to the <code>default</code> profile, and a{" "}
-            <em>shorter</em> inner lifetime could pull the outer one down
-            with it. Always set an explicit <code>cacheLife</code> on outer
-            scopes to keep behavior predictable.
+            If the outer scope omitted <code>cacheLife</code> entirely, it would
+            fall back to the <code>default</code> profile, and a{" "}
+            <em>shorter</em> inner lifetime could pull the outer one down with
+            it. Always set an explicit <code>cacheLife</code> on outer scopes to
+            keep behavior predictable.
           </p>
         </>
       }

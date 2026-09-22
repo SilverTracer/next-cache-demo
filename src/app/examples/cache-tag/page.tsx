@@ -13,10 +13,10 @@ export default async function CacheTagPage() {
       title="`cacheTag` + on-demand invalidation"
       summary={
         <p>
-          Tagging a cache entry with <code>cacheTag</code> lets you purge it
-          on demand — no need to wait for <code>cacheLife</code> to expire.
-          This entry is cached for <code>hours</code>, but clicking the
-          button below runs a Server Action that calls{" "}
+          Tagging a cache entry with <code>cacheTag</code> lets you purge it on
+          demand — no need to wait for <code>cacheLife</code> to expire. This
+          entry is cached for <code>hours</code>, but clicking the button below
+          runs a Server Action that calls{" "}
           <code>updateTag(&apos;demo-tag&apos;)</code>, so the very next read
           sees fresh data immediately.
         </p>
@@ -36,7 +36,10 @@ export async function invalidate() {
   // or: revalidateTag('demo-tag', 'max') for stale-while-revalidate
 }`}
     >
-      <ResultCard result={data} note="Long-lived (hours) until invalidated on demand." />
+      <ResultCard
+        result={data}
+        note="Long-lived (hours) until invalidated on demand."
+      />
       <div style={{ display: "flex", gap: "0.75rem" }}>
         <InvalidateButton />
         <RefreshButton label="Refresh only (no invalidation)" />
