@@ -52,6 +52,12 @@ const examples = [
     description:
       "Call cacheLife with a different profile depending on the data.",
   },
+  {
+    href: "/examples/dynamic-segment/1",
+    title: "10. Dynamic route segment + cached components",
+    description:
+      "A [id] route where some components are cached per id and others aren't.",
+  },
 ];
 
 export default function Home() {
