@@ -41,6 +41,7 @@ requiring you to wait minutes/hours.
 8. **nested-caching** — how an explicit outer `cacheLife` overrides an inner one.
 9. **conditional-lifetime** — picking a different `cacheLife` profile per branch, and the pattern for passing request-time values (like `searchParams`) into a cached function.
 10. **dynamic-segment/[id]** — a dynamic route segment (`/examples/dynamic-segment/1`) that mixes a per-id cached component (`ProductDetails`, cached for `hours` via `generateStaticParams`) with an uncached one (`LiveStock`) rendered right next to it.
+11. **private-cache** — `use cache: private` side by side with regular `use cache`: reading `cookies()` directly vs passing it in as an argument, why a private cache is never shared across requests (but is deduped within one), and a table of which request APIs are allowed where.
 
 Each page shows the relevant code snippet next to a live result with a
 generated timestamp/id, so reloading makes it obvious whether the value came
@@ -49,6 +50,7 @@ from cache (unchanged) or was recomputed (changed).
 ## Learn more
 
 - [`use cache` directive](https://nextjs.org/docs/app/api-reference/directives/use-cache)
+- [`use cache: private` directive](https://nextjs.org/docs/app/api-reference/directives/use-cache-private)
 - [`cacheLife`](https://nextjs.org/docs/app/api-reference/functions/cacheLife)
 - [`cacheTag`](https://nextjs.org/docs/app/api-reference/functions/cacheTag)
 - [`cacheComponents`](https://nextjs.org/docs/app/api-reference/config/next-config-js/cacheComponents)

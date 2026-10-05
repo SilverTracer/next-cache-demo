@@ -58,6 +58,12 @@ const examples = [
     description:
       "A [id] route where some components are cached per id and others aren't.",
   },
+  {
+    href: "/examples/private-cache",
+    title: "11. `use cache: private` vs `use cache`",
+    description:
+      "Read cookies()/headers() directly in a private cache, and see why it's never shared across requests.",
+  },
 ];
 
 export default function Home() {
