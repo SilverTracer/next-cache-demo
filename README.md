@@ -5,9 +5,11 @@ A small Next.js 16 app for walking through the `"use cache"` directive,
 
 ## Running it
 
+Use pnpm for dependency management and project commands.
+
 ```bash
-npm install
-npm run dev
+pnpm install
+pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) — the home page links to
@@ -17,8 +19,8 @@ For the most realistic caching behavior (persistent in-memory cache across
 requests), run a production build instead of dev mode:
 
 ```bash
-npm run build
-npm start
+pnpm build
+pnpm start
 ```
 
 ## What's enabled
@@ -42,10 +44,15 @@ requiring you to wait minutes/hours.
 9. **conditional-lifetime** — picking a different `cacheLife` profile per branch, and the pattern for passing request-time values (like `searchParams`) into a cached function.
 10. **dynamic-segment/[id]** — a dynamic route segment (`/examples/dynamic-segment/1`) that mixes a per-id cached component (`ProductDetails`, cached for `hours` via `generateStaticParams`) with an uncached one (`LiveStock`) rendered right next to it.
 11. **private-cache** — `use cache: private` side by side with regular `use cache`: reading `cookies()` directly vs passing it in as an argument, why a private cache is never shared across requests (but is deduped within one), and a table of which request APIs are allowed where.
+12. **`use cache: private` — Usage Scenarios and Caching Behavior** - four pairs of sibling routes comparing private-only, uncached-only, and mixed reads with and without prefetch, under the same public cached layout.
 
 Each page shows the relevant code snippet next to a live result with a
 generated timestamp/id, so reloading makes it obvious whether the value came
 from cache (unchanged) or was recomputed (changed).
+
+The [use cache: private — Usage Scenarios and Caching Behavior guide](./src/app/examples/private-navigation/README.md)
+contains the test matrix, caching behavior, conclusions, and validation notes
+for this example.
 
 ## Learn more
 

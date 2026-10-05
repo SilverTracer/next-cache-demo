@@ -64,6 +64,12 @@ const examples = [
     description:
       "Read cookies()/headers() directly in a private cache, and see why it's never shared across requests.",
   },
+  {
+    href: "/examples/private-navigation/a",
+    title: "12. use cache: private — Usage Scenarios and Caching Behavior",
+    description:
+      "Compare four pairs of cookie-aware routes: private, uncached, and mixed reads with and without prefetch.",
+  },
 ];
 
 export default function Home() {
