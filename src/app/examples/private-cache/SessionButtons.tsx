@@ -18,10 +18,18 @@ export function SessionButtons() {
 
   return (
     <div className="button-row">
-      <button className="button" disabled={isPending} onClick={() => set("alice")}>
+      <button
+        className="button"
+        disabled={isPending}
+        onClick={() => set("alice")}
+      >
         Set cookie: session=alice
       </button>
-      <button className="button" disabled={isPending} onClick={() => set("bob")}>
+      <button
+        className="button"
+        disabled={isPending}
+        onClick={() => set("bob")}
+      >
         Set cookie: session=bob
       </button>
       <button className="button" disabled={isPending} onClick={() => set("")}>
